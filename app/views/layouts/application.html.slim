@@ -49,7 +49,7 @@ html lang="en"
           .col-md-2
             ul
               li LATEST
-              li ~
+              =render partial: "/layouts/recent_albums", :locals =>{albums: get_four_lateset_albums}, cached: true 
           .col-md-2
             ul
               li OUR TEAM
