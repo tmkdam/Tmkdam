@@ -32,9 +32,22 @@ class SongsController < ApplicationController
   end
 
   def destroy
+    @song = Song.find(params[:id])
     @song.destroy
-    respond_with(@song)
+    respond_to do |format|
+         format.js 
+         format.html { respond_with(@song)}
+     end
   end
+
+    def ajax_delete_link
+    @song = Song.find(params[:id])
+    @song.destroy
+      respond_to do |format|
+        format.js
+      end 
+    end 
+
 
   private
     def set_song
