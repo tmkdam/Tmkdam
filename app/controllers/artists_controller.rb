@@ -4,7 +4,7 @@ class ArtistsController < ApplicationController
   respond_to :html
 
   def index
-    @artists = Artist.all
+    @artists = Artist.all.group(:name)
     respond_with(@artists)
   end
 
