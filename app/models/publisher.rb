@@ -2,7 +2,7 @@ class Publisher < ActiveRecord::Base
   has_many :albums
   has_many :songs, through: :albums
   
-  validates :name, length: { in: 5..50 }, uniqueness: true
+  validates :name, length: { in: 5..50 }
   validates :address, length: { in: 5..50 }
   validates :city, length: { in: 5..50 }
   validates :state, length: { is: 2 }
